@@ -7,67 +7,106 @@
 		<link rel="stylesheet"
               href="http://fonts.googleapis.com/css?family=Carter+One">
         <link rel="stylesheet" type="text/css" href="css/resets.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
-        
+
 	</head>
 	<body>
-		<div class="container list">
-			<header>
-				<h1><span id="user_name">Todo List</span></h1>
-				<nav>
-					<ul>
-						<li class="item"><a href="#list" >Todo List</a></li>
-						<li class="item"><a href="#add" >Add Todo</a></li>
-						<li class="item"><a href="#settings" >Settings</a></li>
-					</ul>
-				</nav>
-			</header>
-			<section class="list active">
-				<form action="" name="search">
-					<input type="search" name="jquery" placeholder="Search todo..." />
-					<ul id="todo_list">
-						<li>
-							<div class="item_title">
-								No tasks to display. 
-								<a href="#add">Add one</a>?
-							</div>
-						</li>
-					</ul>
+		
+	<div class="container-fluid">
+		<!-- header -->
+		<header>
+			<div class="row">
+				<span class="text-center" id="todoTitle">Todo list</span>
+			</div>
+			<nav class="row">
+				<ul class="nav-menu">
+					<li><a href="" class="active">Todo List</a></li>
+					<li><a href="">Add Todo</a></li>
+					<li><a href="">Settings</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- section part1 -->
+		<section class="list active">
+			<div class="row">
+				<form  class="form-horizontal" role="form">
+					<input type="search" name="search" id="" class="form-control" placeholder="Search todo..."/>
 				</form>
-			</section>
-			<section class="add">
-				<form name="add">
-					<label for="">
-						Todo Description
-						<textarea name="desc" rows="" cols=""></textarea>
-					</label>
-					<label for="">
-						Due Date
-						<input type="date" name="due_date" />
-					</label>
-					<input type="submit" value="Add Todo" />
-				</form>
-			</section>
-			<section class="settings">
-				<form action="" name="settings">
-					<label for="">
-						Your Todo Name
-						<input type="text" name="name" id="" />
-					</label>
-					<label for="">Color Scheme
-						<select name="color_scheme">
-							<option value="">Blue</option>
-							<option value="">Red</option>
-							<option value="">Green</option>
-						</select>
-					</label>
-					<input type="submit" value="Save Settings" />
-					<input type="reset" value="Reset All Data" />
-				</form>
-			</section>
-		</div>
+			</div>	
+			<div class="row">
+				<ul id="task_list" class="task_list">
+					<li>
+						<div class="item-title">
+							No tasks to display. 
+							<a href="">Add one</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- section part2 -->
+		
+		<section class="add comm">
+			<div class="row">
+				<label class="h4">Task Description</label>
+				<textarea name="" rows="" cols="" class="txt"></textarea>
+			</div>
+			<div class="row">
+				<label class="h4">Due Date</label>
+				<input type="date" name="dueDate" id="" class="dueDate"/>
+			</div>
+			<div class="row">
+				<button class="btn btn-success todo-btn">Add Todo</button>
+			</div>
+		</section>
+		
+			
+		<!-- section part3 -->
+		
+		<section class="settings comm">
+			<div class="row">
+				<label class="h4">Todo Name</label>
+				<input type="text" name="" id="" class="txt" />
+			</div>
+			<div class="row">
+				<label class="h4">Color Scheme</label>
+				<select name="color" class="dueDate colorType">
+					<option value="Red">Red</option>
+					<option value="Blue">Blue</option>
+					<option value="Green">Green</option>
+				</select>
+			</div>
+			<div class="row">
+				<button class="btn btn-success todo-btn">保存</button>
+				<button class="btn btn-danger todo-btn">重置</button>
+			</div>
+		</section>
+		
+		
+		
+	</div>
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</body>
 	<script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/localStorage.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </html>

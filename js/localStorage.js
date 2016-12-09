@@ -3,16 +3,20 @@
  * 使其显示用户名称，改变文档元素的class，来选定配色方案
  */
 
-var enable = 'localStorage' in window;//检测localStorage是否存在
+//检测localStorage是否存在
+var enableStorage = 'localStorage' in window;
 
+//从localStorage中取回应用设置
 var loadSettings = function(){
-	if (enable) {
-		var name = localStorage.getItem("name"),
-			colorScheme = localStorage.getItem('colorScheme'),
-			nameDisplay = document.getElementById("user_name"),
-			doc = document.documentElement,
-			colorSchemeField = document.forms.settings.color_scheme,
-			nameFiled = document.forms.settings.name;
+	if (enableStorage) {
+		
+		var name = localStorage.getItem("name");
+		var	colorType = localStorage.getItem('colorType');
+		var	todoTitle = document.getElementById("todoTitle");
+		var	doc = document.documentElement;
+		var	colorSchemeField = document.forms.settings.color_scheme;
+		var	nameFiled = document.forms.settings.name;
+		
 		if (name) {
 			nameDisplay.innerHTML = name + "s";
 			nameFiled.value = name;
@@ -36,7 +40,7 @@ var loadSettings = function(){
 
 var saveSettings = function(e) {
 	e.preventDefault();
-	if (enable){
+	if (enableStorage){
 		var name = document.forms.settings.name.value;
 		if (name.length > 0) {
 			var colorScheme = document.forms.settings.color_scheme.value;
@@ -44,7 +48,7 @@ var saveSettings = function(e) {
 			localStorage.setItem('name',name);
 			localStorage.setItem('colorScheme',colorScheme);
 			loadSettings();//保存好数据后 更新应用
-			alert("Seetings saved successfully");
+			alert("您的设置成功保存");
 		} else {
 			alert('请输入你的清单名字',"settings error");
 		}

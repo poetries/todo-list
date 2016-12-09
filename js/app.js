@@ -1,4 +1,6 @@
 //切换页面URL
-$("ul .item").on("click",function(){
-	$("section").eq($(this).index()).addClass("active").siblings().removeClass("active");
+$("ul.nav-menu li").on("click",function(e){
+	e.preventDefault();//阻止冒泡
+	$("section").eq($(this).index()).addClass("active").siblings("section").removeClass("active");
+	$(this).find("a").addClass("active").parent().siblings().find("a").removeClass("active");
 });
