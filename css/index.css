@@ -75,7 +75,7 @@ section.settings .colorType {
 	padding: 20px;
 }
 
-.comm .txt,.dueDate,.todo-btn {
+.comm .txt,.dueDate,.todo-btn,.showColor {
 	width: 100%;
 }
 .comm .txt {

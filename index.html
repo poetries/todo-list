@@ -8,6 +8,7 @@
               href="http://fonts.googleapis.com/css?family=Carter+One">
         <link rel="stylesheet" type="text/css" href="css/resets.css"/>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jquery.bigcolorpicker.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
 
 	</head>
@@ -76,14 +77,8 @@
 				<input type="text" id="name-filed" class="txt" />
 			</div>
 			<div class="row">
-				<form action="" name="settings">
-					<label class="h4">Color Scheme</label>
-					<select  class="dueDate colorType" id="colorType">
-						<option value="Red">Red</option>
-						<option value="Blue">Blue</option>
-						<option value="Green">Green</option>
-					</select>
-				</form>
+				<label class="h4">Color Scheme</label>
+				<span class="btn btn-default showColor">pick color</span>
 			</div>
 			<div class="row">
 				<button class="btn btn-success todo-btn" id="save">保存</button>
@@ -96,8 +91,8 @@
 	
 
 	</body>
-	<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/vendor/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/jquery.bigcolorpicker.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/localStorage.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </html>

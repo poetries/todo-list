@@ -23,14 +23,19 @@ var loadSettings = function(){
 			nameFiled.value = '';
 		}
 		if (colorType) {
-			nameDisplay.style.backgroundColor = colorType;
-			colorTypeField.value = colorType;
-		}else {
-			nameDisplay.style.backgroundColor = 'blue';
-			colorTypeField.value = 'Blue';
+			$("#todoTitle").css("background",colorType);
 		}
 	}
 }
+
+
+var color1;
+
+//颜色选择
+$(".showColor").bigColorpicker(function(el,icolor){
+	color1 = icolor;
+});
+$("#f333").bigColorpicker("f3","L",6);
 
 
 //保存数据到localStorage中 只需利用setItem()方法，并将键值作为参数传入
@@ -40,15 +45,14 @@ var saveSettings = function(e) {
 	e.preventDefault();
 	if (enableStorage){
 		var name = document.getElementById("name-filed").value;
-		if (name.length > 0) {
-			var colorType = document.getElementById("colorType").value;
 			
+		if (name.length > 0) {
 			localStorage.setItem('name',name);
-			localStorage.setItem('colorType',colorType);
+			localStorage.setItem('colorType',color1);
 			loadSettings();//保存好数据后 更新应用
-			//alert("您的设置成功保存");
+			alert("您的设置成功保存");
 		} else {
-			alert('请输入你的清单名字',"settings error");
+			alert('请输入你的清单名字');
 		}
 	}else {
 		alert("浏览器不支持localStorage");
@@ -67,12 +71,12 @@ var saveSettings = function(e) {
  */
 
 var resetSettings = function(){
-	if (confirm("你确定删除所有的数据?","Reset Data")) {
+	//if (confirm("你确定删除所有的数据?","Reset Data")) {
 		if (enableStorage) {
 			localStorage.clear();
 		}
 		resetSettings();//数据清除后 将数据设置为默认状态
-	}
+	//}
 }
 
 
