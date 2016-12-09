@@ -17,7 +17,7 @@ var loadSettings = function(){
 			nameDisplay.innerHTML = name + "s";
 			nameFiled.value = name;
 		}else {
-			nameDisplay.innerHTML = "My";
+			nameDisplay.innerHTML = "Todo List";
 			nameFiled.value = '';
 		}
 		if (colorScheme) {
@@ -39,10 +39,11 @@ var saveSettings = function(e) {
 	if (enable){
 		var name = document.forms.settings.name.value;
 		if (name.length > 0) {
-			var colorScheme = document.forms.settins.color_scheme.value;
+			var colorScheme = document.forms.settings.color_scheme.value;
 			
 			localStorage.setItem('name',name);
 			localStorage.setItem('colorScheme',colorScheme);
+			loadSettings();//保存好数据后 更新应用
 			alert("Seetings saved successfully");
 		} else {
 			alert('请输入你的清单名字',"settings error");
@@ -51,3 +52,34 @@ var saveSettings = function(e) {
 		alert("浏览器不支持localStorage");
 	}
 }
+
+/**
+ * 从localStorage中清除数据：
+ * localStorage有两种清除数据的方法，第一个是removeItem，适用于删除单个数据
+ * 第二种是clear，删除所有的数据
+ */
+
+/**
+ * 清除后需要加载默认用户设置
+ *
+ */
+
+var resetSettings = function(e){
+	e.preventDefault();
+	if (confirm("你确定删除所有的数据?","Reset Data")) {
+		if (enable) {
+			localStorage.clear();
+		}
+		resetSettings();//数据清除后 将数据设置为默认状态
+	}
+}
+
+
+//将UI与localStorage函数连接起来
+//将事件监听器添加到设置视图上，当用户按下按钮时，就能保存或重置数据
+//还需要调用loadSeetings() 这样每次从localStorage中读取数据时，都重新加载到应用页面
+
+loadSettings();
+document.forms.settings.addEventListener("submit",saveSettings,false);
+document.forms.settings.addEventListener("reset",resetSettings,false);
+
