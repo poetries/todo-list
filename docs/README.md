@@ -22,3 +22,11 @@
 - 利用IndexDB API，实现任务列表视图的数据输入以及搜索功能
 - 创建缓存清单文件，实现应用的离线使用功能
 - 实现应用的自动更新功能
+
+### 利用localStorage管理数据
+---
+
+- 从localStorage处读取应用设置
+- 将应用数据存在localStorage中
+- 清除localStorage中所有的设置与数据
+- 将UI与localStorage函数链接起来
