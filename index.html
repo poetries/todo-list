@@ -22,7 +22,7 @@
 			<nav class="row">
 				<ul class="nav-menu">
 					<li><a href="" class="active">Todo List</a></li>
-					<li><a href="">Add Todo</a></li>
+					<li><a href="#addtodo">Add Todo</a></li>
 					<li><a href="">Settings</a></li>
 				</ul>
 			</nav>
@@ -49,14 +49,18 @@
 
 		<!-- section part2 -->
 		
-		<section class="add comm">
+		<section class="add comm" id="addtodo">
 			<div class="row">
-				<label class="h4">Task Description</label>
-				<textarea name="" rows="" cols="" class="txt"></textarea>
+				<form action="">
+					<label class="h4">Task Description</label>
+					<textarea name="" rows="" cols="" class="txt"></textarea>
+				</form>
 			</div>
 			<div class="row">
-				<label class="h4">Due Date</label>
-				<input type="date" name="dueDate" id="" class="dueDate"/>
+				<form action="">
+					<label class="h4">Due Date</label>
+					<input type="date" name="dueDate" id="" class="dueDate"/>
+				</form>
 			</div>
 			<div class="row">
 				<button class="btn btn-success todo-btn">Add Todo</button>
@@ -69,43 +73,30 @@
 		<section class="settings comm">
 			<div class="row">
 				<label class="h4">Todo Name</label>
-				<input type="text" name="" id="" class="txt" />
+				<input type="text" id="name-filed" class="txt" />
 			</div>
 			<div class="row">
-				<label class="h4">Color Scheme</label>
-				<select name="color" class="dueDate colorType">
-					<option value="Red">Red</option>
-					<option value="Blue">Blue</option>
-					<option value="Green">Green</option>
-				</select>
+				<form action="" name="settings">
+					<label class="h4">Color Scheme</label>
+					<select  class="dueDate colorType" id="colorType">
+						<option value="Red">Red</option>
+						<option value="Blue">Blue</option>
+						<option value="Green">Green</option>
+					</select>
+				</form>
 			</div>
 			<div class="row">
-				<button class="btn btn-success todo-btn">保存</button>
-				<button class="btn btn-danger todo-btn">重置</button>
+				<button class="btn btn-success todo-btn" id="save">保存</button>
+				<button class="btn btn-danger todo-btn" id="reset">重置</button>
 			</div>
 		</section>
 		
-		
-		
+			
 	</div>
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	</body>
-	<script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vendor/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/localStorage.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/app.js" type="text/javascript" charset="utf-8"></script>

@@ -9,27 +9,25 @@ var enableStorage = 'localStorage' in window;
 //从localStorage中取回应用设置
 var loadSettings = function(){
 	if (enableStorage) {
-		
 		var name = localStorage.getItem("name");
 		var	colorType = localStorage.getItem('colorType');
-		var	todoTitle = document.getElementById("todoTitle");
-		var	doc = document.documentElement;
-		var	colorSchemeField = document.forms.settings.color_scheme;
-		var	nameFiled = document.forms.settings.name;
+		var	nameDisplay = document.getElementById("todoTitle");
+		var	colorTypeField = document.getElementById("colorType");
+		var	nameFiled = document.getElementById("name-filed");
 		
 		if (name) {
-			nameDisplay.innerHTML = name + "s";
+			nameDisplay.innerHTML = name;
 			nameFiled.value = name;
 		}else {
 			nameDisplay.innerHTML = "Todo List";
 			nameFiled.value = '';
 		}
-		if (colorScheme) {
-			doc.className = colorScheme.toLocaleString();
-			colorSchemeField.value = colorScheme;
+		if (colorType) {
+			nameDisplay.style.backgroundColor = colorType;
+			colorTypeField.value = colorType;
 		}else {
-			doc.className = 'blue';
-			colorSchemeField.value = 'Blue';
+			nameDisplay.style.backgroundColor = 'blue';
+			colorTypeField.value = 'Blue';
 		}
 	}
 }
@@ -41,14 +39,14 @@ var loadSettings = function(){
 var saveSettings = function(e) {
 	e.preventDefault();
 	if (enableStorage){
-		var name = document.forms.settings.name.value;
+		var name = document.getElementById("name-filed").value;
 		if (name.length > 0) {
-			var colorScheme = document.forms.settings.color_scheme.value;
+			var colorType = document.getElementById("colorType").value;
 			
 			localStorage.setItem('name',name);
-			localStorage.setItem('colorScheme',colorScheme);
+			localStorage.setItem('colorType',colorType);
 			loadSettings();//保存好数据后 更新应用
-			alert("您的设置成功保存");
+			//alert("您的设置成功保存");
 		} else {
 			alert('请输入你的清单名字',"settings error");
 		}
@@ -68,10 +66,9 @@ var saveSettings = function(e) {
  *
  */
 
-var resetSettings = function(e){
-	e.preventDefault();
+var resetSettings = function(){
 	if (confirm("你确定删除所有的数据?","Reset Data")) {
-		if (enable) {
+		if (enableStorage) {
 			localStorage.clear();
 		}
 		resetSettings();//数据清除后 将数据设置为默认状态
@@ -84,6 +81,6 @@ var resetSettings = function(e){
 //还需要调用loadSeetings() 这样每次从localStorage中读取数据时，都重新加载到应用页面
 
 loadSettings();
-document.forms.settings.addEventListener("submit",saveSettings,false);
-document.forms.settings.addEventListener("reset",resetSettings,false);
+document.getElementById("save").addEventListener("click",saveSettings,false);
+document.getElementById("reset").addEventListener("click",resetSettings,false);
 
