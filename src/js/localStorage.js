@@ -17,7 +17,7 @@ var loadSettings = function(){
 		
 		if (name) {
 			nameDisplay.innerHTML = name;
-			nameFiled.value = name;
+			nameFiled.value = "";
 		}else {
 			nameDisplay.innerHTML = "Todo List";
 			nameFiled.value = '';

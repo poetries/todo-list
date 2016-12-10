@@ -44,15 +44,20 @@ header nav ul.nav-list a.active {
 
 /* section part1 */
 
+
 section {
 	display: none;
 }
 section.active {
 	display: block;
 }
-
+section.list button[type=submit] {
+	width: 100%;
+	margin-left: -20px;
+	font-size: 14px;
+}
 .task-list {
-    padding-top: 10px;
+	padding: 10px 34px 0 17px;
 }
 .task-list li {
 
@@ -61,7 +66,9 @@ section.active {
     background-color: #fff;
     font: 1.1em Helvetica, Arial, sans-serif;
 }
-
+.task-item {
+	margin-bottom: 1px;
+}
 .task-item:hover {
 	background: rgba(247, 244, 244, 0.44);
 }
@@ -104,15 +111,11 @@ section.active {
 
 
 
-section.settings .colorType {
-    font-size: 16px;
-}
-
 .comm{
 	padding: 20px;
 }
 
-.comm .txt,.dueDate,.todo-btn,.showColor {
+.comm .txt,.todo-btn,.showColor {
 	width: 100%;
 }
 .comm .txt {
@@ -123,6 +126,10 @@ section.settings .colorType {
 .comm .todo-btn {
 	margin-top:15px;
 	font-size: 18px;
+}
+section.settings input[type=text] {
+	font-size: 14px;
+	color: #ccc;
 }
 
 
