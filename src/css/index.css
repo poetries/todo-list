@@ -50,10 +50,11 @@ section {
 section.active {
 	display: block;
 }
-.task_list {
+
+.task-list {
     padding-top: 10px;
 }
-.task_list li {
+.task-list li {
 
     padding: 15px 10px;
     border-bottom: 1px solid #ccc;
@@ -61,8 +62,40 @@ section.active {
     font: 1.1em Helvetica, Arial, sans-serif;
 }
 
+.task-item:hover {
+	background: rgba(247, 244, 244, 0.44);
+}
 
-
+.task-item .task-item-btnColor {
+	color: #fff;
+}
+.task-detail,.task-detail-mask {
+	position: absolute;
+}
+.task-detail {
+	background: #fff;
+	padding: 10px;
+	bottom: 200px;
+	right: 280px;
+	width: 50%;
+	height: 50%;
+	color: #333;
+}
+.task-detail .content {
+	padding: 10px;
+	font: bold;
+	cursor: pointer;
+}
+.task-detail .desc textarea {
+	width: 100%;
+}
+.task-detail-mask {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(100,100,100,.5);
+}
 /* section part2  section part3*/
 
 

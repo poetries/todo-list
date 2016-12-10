@@ -37,14 +37,42 @@
 				</form>
 			</div>	
 			<div class="row">
-				<ul id="task_list" class="task_list">
-					<!--<li>
+				<ul id="task_list" class="task-list">
+					<li class="task-item">
 						<div class="item-title">
 							No tasks to display. 
-							<a href="">Add one</a>
+							<a href="javascript:void(0);">Add one</a>
 						</div>
-					</li>-->
+					</li>
+					<li class="task-item clearfix">
+						<span><input type="checkbox" name="" id="" value="" /></span>
+						<span class="item-content">fafda</span>
+						<div class="pull-right">
+							<button class="delete btn btn-danger btn-xs" ><a href="" class="task-item-btnColor">delete</a></button>
+							<button class="detail btn btn-success btn-xs" ><a href="" class="task-item-btnColor">detail</a></button>
+						</div>
+					</li>
+					<li class="task-item"></li>
+					<li class="task-item"></li>
 				</ul>
+
+				<!-- 遮罩层 -->
+				<div class="task-detail-mask" id="task-modal">
+					
+				</div>
+				
+				<div class="task-detail">
+					<div class="h3 text-center">清单Todo</div>
+					<div class="desc">
+						<textarea name="" rows="" cols=""></textarea>
+					</div>
+					<div class="remind">
+						<input type="date" name="" id="" />
+						<button class="btn btn-success btn-sm">提交</button>
+					</div>
+				</div>
+				
+				
 			</div>
 		</section>
 
@@ -91,8 +119,9 @@
 	
 
 	</body>
-	<script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vendor/jquery.bigcolorpicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/localStorage.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </html>
