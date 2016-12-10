@@ -32,18 +32,18 @@
 		<!-- section part1 -->
 		<section class="list active">
 			<div class="row">
-				<form  class="form-horizontal" role="form">
-					<input type="search" name="search" id="" class="form-control" placeholder="Search todo..."/>
+				<form  class="form-horizontal" role="form" name="form">
+					<input type="search" name="search" id="search" class="form-control" placeholder="Search todo..."/>
 				</form>
 			</div>	
 			<div class="row">
 				<ul id="task_list" class="task_list">
-					<li>
+					<!--<li>
 						<div class="item-title">
 							No tasks to display. 
 							<a href="">Add one</a>
 						</div>
-					</li>
+					</li>-->
 				</ul>
 			</div>
 		</section>
@@ -54,13 +54,13 @@
 			<div class="row">
 				<form action="">
 					<label class="h4">Task Description</label>
-					<textarea name="" rows="" cols="" class="txt"></textarea>
+					<textarea name="" rows="" cols="" class="txt" id="txt"></textarea>
 				</form>
 			</div>
 			<div class="row">
-				<form action="">
+				<form action="" id="addForm">
 					<label class="h4">Due Date</label>
-					<input type="date" name="dueDate" id="" class="dueDate"/>
+					<input type="date" name="dueDate" id="dueDate" class="dueDate"/>
 				</form>
 			</div>
 			<div class="row">
