@@ -80,6 +80,10 @@ section.active {
 	width: 50%;
 	height: 50%;
 	color: #333;
+	
+}
+.task-detail,.task-detail-mask {
+	display: none;
 }
 .task-detail .content {
 	padding: 10px;
