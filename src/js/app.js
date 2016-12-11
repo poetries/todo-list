@@ -23,7 +23,9 @@ init();
 var $addFormTask = $(".add-task");
 var task_list = [];
 var $delete_task;
-
+var $detail_task;
+var $task_detail = $(".task-detail");
+var $task_detail_mask = $(".task-detail-mask");
 
 $addFormTask.on("submit",function(e){
 	var new_task = {};
@@ -44,7 +46,46 @@ $addFormTask.on("submit",function(e){
 	
 });
 
-function listener_task_delete(){
+$task_detail_mask.on("click",task_hide_detail);
+
+function listen_task_detail(){
+	$detail_task.on("click",function(e){
+		e.preventDefault();
+		var $this = $(this);
+		var $item = $this.parents("task_list");
+		var index = $item.data('index');
+		task_show_detail(index);
+		console.log(index);
+		
+	});
+}
+function task_show_detail(index){
+	render_task_detail(index);
+	$task_detail.show();
+	$task_detail_mask.show();
+}
+function task_hide_detail(){
+	$task_detail.hide();
+	$task_detail_mask.hide();
+}
+//渲染指定task的信息信息
+function render_task_detail(index){
+	if(index === undefined || !task_list[index])return;
+	
+	var item = task_list[index];
+	
+	var tpl = '<div class="h3 text-center">'+item.content+'</div>' +
+			  '<div class="desc">' +
+			  '<textarea>'+ item.desc +'</textarea>' +
+			  '</div>' +
+			  '<div class="remind">' +
+			  '<input type="date" name="" id="" />' +
+			  '<button class="btn btn-success btn-sm">提交</button>' +
+			  '</div>';
+	$task_detail.html('');
+	$task_detail.html(tpl);
+}
+function listen_task_delete(){
 	$delete_task.on("click",function(e){
 	e.preventDefault();
 	
@@ -98,7 +139,10 @@ function render_task_list(){
 		$task_list.append($task);
 	}
 	$delete_task = $(".task-item task-item-btnColor.delete");
-	listener_task_delete();
+	$detail_task = $("#detail");
+	
+	listen_task_delete();
+	listen_task_detail();
 	console.log($delete_task);
 }
 function render_task_item(data,index){
